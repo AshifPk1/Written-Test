@@ -1,0 +1,40 @@
+{% extends 'myapp/base.html' %}
+
+
+{% block content %}
+
+
+<a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'tenant_update' object.id %}">Update</a>
+<a class="btn-danger btn-sm mt-1 mb-1" href="{% url 'tenant_delete' object.id %}">Delete</a>
+<table class="table table-bordered">
+    <thead>
+<tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Mobile 1</th>
+    <th>Mobile 2</th>
+    <th>Mobile 3</th>
+    <th>Address 1</th>
+    <th>City</th>
+    <th>Country</th>
+    <th>Location</th>
+</tr>
+    </thead>
+    <tbody>
+
+        <tr>
+        <td>{{ tenant.name }}</td>
+        <td>{{ tenant.age }}</td>
+        <td>{{ tenant.gender }}</td>
+        <td>{{ tenant.mobile_1 }}</td>
+        <td>{{ tenant.mobile_2 }}</td>
+        <td>{{ tenant.mobile_3 }}</td>
+        <td>{{ tenant.address_1 }}</td>
+        <td>{{ tenant.city }}</td>
+        <td>{{ tenant.country }}</td>
+        <td>{{ tenant.location }}</td>
+        </tr>
+    </tbody>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "myapp/base.html" %}
+{% block content %}
+<table class="table table-bordered">
+<thead>
+<tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Mobile 1</th>
+    <th>Mobile 2</th>
+    <th>Mobile 3</th>
+    <th>Address 1</th>
+    <th>City</th>
+    <th>Country</th>
+    <th>Location</th>
+</tr>
+</thead>
+    {% for foo in tenant %}
+        <tbody>
+        <tr>
+            <td><a href="{% url 'tenant_detail' foo.id %}" >{{ foo.name }}</a></td>
+        <td>{{ foo.age }}</td>
+        <td>{{ foo.gender }}</td>
+        <td>{{ foo.mobile_1 }}</td>
+        <td>{{ foo.mobile_2 }}</td>
+        <td>{{ foo.mobile_3 }}</td>
+        <td>{{ foo.address_1 }}</td>
+        <td>{{ foo.city }}</td>
+        <td>{{ foo.country }}</td>
+        <td>{{ foo.location }}</td>
+        </tr>
+        </tbody>
+
+
+    {% endfor %}
+
+{% endblock content %}
